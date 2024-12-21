@@ -13,11 +13,11 @@ public class TecnicoComercial {
         this.bien = bien;
     }
     
-    public Bien obtenerBien(){
+    public Bien getBien(){
         return bien;
     }
 
-    public Cliente obtenerCliente() {
+    public Cliente getCliente() {
         return cliente;
     }
     

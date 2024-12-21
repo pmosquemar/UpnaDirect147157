@@ -2,42 +2,42 @@ package upnadirect147157;
 
 import java.time.LocalDate;
 
-
 /**
  *
  * @author alumno
  */
-public class Mafro implements Aseguradora{
+public class LineaIndirecta implements Aseguradora{
     private TecnicoComercial tecnico;
     double oferta;
 
-    public Mafro(TecnicoComercial tecnico){
+    public LineaIndirecta(TecnicoComercial tecnico){
         this.tecnico = tecnico;
     }
 
     
-    @Override
+     @Override
     public double calcularOferta(){
         
         Bien bien;
         Cliente cliente;
         bien = tecnico.getBien();
         cliente = tecnico.getCliente();
-        if(bien.getTipo().equals("vehiculo") && (cliente.getAnioNacimiento() - LocalDate.now().getYear() < 20)){
-            oferta = 0.05 * bien.getValor();
+        if((bien.getTipo().equals("vehiculo") && bien.getValor() < 20000) || (bien.getTipo().equals("vivienda") && bien.getValor() < 150000)){
+            oferta = 0.04 * bien.getValor();
         }
-        else if(bien.getTipo().equals("vivienda") && (bien.getValor() > 200000) && (cliente.getSalario() < 20000)){
-            oferta = 0.02 * bien.getValor();
+        else if((bien.getTipo().equals("vehiculo") && bien.getValor() >= 20000) && (cliente.getAnioNacimiento() - LocalDate.now().getYear() > 60)){
+            oferta = 0.06 * bien.getValor();
         }
         else{
-            oferta = 0.03 * bien.getValor()
-                    ; 
+            oferta = 0.04 * bien.getValor(); 
+            
         }
 
         return oferta;
     }
 
-    @Override
+    
+     @Override
     public int calcularComisison(){
         int comision;
         if(oferta < 1000){

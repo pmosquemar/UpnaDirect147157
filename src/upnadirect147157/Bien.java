@@ -35,4 +35,6 @@ public class Bien {
     public int getValor() {
         return valor;
     }
+    
+    
 }
