@@ -6,5 +6,6 @@ package upnadirect147157;
  */
 public interface Aseguradora {
     
-    public abstract double calcularImporte(TecnicoComercial tecnico);
+    public double calcularOferta();
+    public int calcularComisison();
 }

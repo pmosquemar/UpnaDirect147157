@@ -13,5 +13,13 @@ public class TecnicoComercial {
         this.bien = bien;
     }
     
+    public Bien obtenerBien(){
+        return bien;
+    }
+
+    public Cliente obtenerCliente() {
+        return cliente;
+    }
+    
     
 }
