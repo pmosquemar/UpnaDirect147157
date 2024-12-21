@@ -17,21 +17,20 @@ public class Presentador {
     public Cliente datosCliente(){
         int anioNacimiento = vista.consultarAnioNacimiento();
         int salario = vista.consultarSalario();
-        while(!new Cliente(anioNacimiento, salario).usuarioValido()){
+        while(!new Cliente(salario, anioNacimiento).usuarioValido()){
             vista.falloCliente();
-            anioNacimiento = vista.consultarAnioNacimiento();
-            salario = vista.consultarSalario();
+            datosCliente();
         }
-        return new Cliente(anioNacimiento, salario);  
+        return new Cliente(salario, anioNacimiento); 
+        
     }
     
     public Bien datosBien(){
         String tipo = vista.consultarTipo();
         int valor = vista.consultarValor();
         while(!new Bien(tipo, valor).bienValido()){
-            vista.falloCliente();
-            tipo = vista.consultarTipo();
-            valor = vista.consultarValor();
+            vista.falloBien();
+            return datosBien();
         }
         return new Bien(tipo, valor);
     }

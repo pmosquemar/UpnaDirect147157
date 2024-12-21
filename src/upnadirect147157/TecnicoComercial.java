@@ -5,7 +5,7 @@ package upnadirect147157;
  * @author alumno
  */
 public class TecnicoComercial {
-    private Cliente cliente;
+   /* private Cliente cliente;
     private Bien bien;
 
     public TecnicoComercial(Cliente cliente, Bien bien) {
@@ -19,7 +19,7 @@ public class TecnicoComercial {
 
     public Cliente getCliente() {
         return cliente;
-    }
+    }*/
     
     public String CalcularOfertas(){
         Presentador presentador = new Presentador();

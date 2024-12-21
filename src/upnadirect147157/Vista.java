@@ -10,17 +10,6 @@ import java.util.Scanner;
 public class Vista {
     private final Scanner scan = new Scanner(System.in);
     
-    public String consultarTipo(){
-        System.out.println("Introduce el tipo del bien: ");
-        String tipo = scan.nextLine();
-        return tipo;
-    }
-    
-    public int consultarValor(){
-        System.out.println("Introduce el valor del bien: ");
-        int valor = scan.nextInt();
-        return valor;
-    }
     
     public int consultarAnioNacimiento(){
         System.out.println("Introduce el año de nacimiento del cliente: ");
@@ -34,9 +23,20 @@ public class Vista {
         return slario;
     }
     
+    public String consultarTipo(){
+        System.out.println("Introduce el tipo del bien: ");
+        String tipo = scan.next();
+        return tipo;
+    }
+    
+    public int consultarValor(){
+        System.out.println("Introduce el valor del bien: ");
+        int valor = scan.nextInt();
+        return valor;
+    }
     
     public void falloCliente(){
-        System.err.println("El año de nacimiento debe estar entre 1910 y " +  LocalDate.now().getYear());
+        System.err.println("El año de nacimiento debe estar entre 1900 y " +  LocalDate.now().getYear());
     }
     
     public void falloBien(){
