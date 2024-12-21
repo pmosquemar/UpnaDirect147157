@@ -8,20 +8,23 @@ import java.time.LocalDate;
  * @author alumno
  */
 public class Adasles implements Aseguradora{
-    private TecnicoComercial tecnico;
+    private Bien bien;
+    private Cliente cliente;
     double oferta;
 
-    public Adasles(TecnicoComercial tecnico){
-        this.tecnico = tecnico;
+    public Adasles(Bien bien, Cliente cliente) {
+        this.bien = bien;
+        this.cliente = cliente;
+    }
+    
+    @Override
+    public String getNombre(){
+        return "Adasles";
     }
 
     @Override
     public double calcularOferta(){
-        
-        Bien bien;
-        Cliente cliente;
-        bien = tecnico.getBien();
-        cliente = tecnico.getCliente();
+
         if(bien.getTipo().equals("vehiculo") && ((cliente.getAnioNacimiento() - LocalDate.now().getYear() < 20) || (cliente.getAnioNacimiento() - LocalDate.now().getYear() > 60))){
             oferta = 0.05 * bien.getValor();
         }

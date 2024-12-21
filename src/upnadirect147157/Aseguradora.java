@@ -6,6 +6,7 @@ package upnadirect147157;
  */
 public interface Aseguradora {
     
+    public String getNombre();
     public double calcularOferta();
     public int calcularComisison();
 }

@@ -7,21 +7,23 @@ import java.time.LocalDate;
  * @author alumno
  */
 public class LineaIndirecta implements Aseguradora{
-    private TecnicoComercial tecnico;
+    private Bien bien;
+    private Cliente cliente;
     double oferta;
 
-    public LineaIndirecta(TecnicoComercial tecnico){
-        this.tecnico = tecnico;
+    public LineaIndirecta(Bien bien, Cliente cliente) {
+        this.bien = bien;
+        this.cliente = cliente;
     }
-
     
     @Override
+    public String getNombre(){
+        return "LineaIndirecta";
+    }
+
+    @Override
     public double calcularOferta(){
-        
-        Bien bien;
-        Cliente cliente;
-        bien = tecnico.getBien();
-        cliente = tecnico.getCliente();
+
         if((bien.getTipo().equals("vehiculo") && bien.getValor() < 20000) || (bien.getTipo().equals("vivienda") && bien.getValor() < 150000)){
             oferta = 0.04 * bien.getValor();
         }

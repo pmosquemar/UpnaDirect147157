@@ -8,21 +8,23 @@ import java.time.LocalDate;
  * @author alumno
  */
 public class Mafro implements Aseguradora{
-    private TecnicoComercial tecnico;
+    private Bien bien;
+    private Cliente cliente;
     double oferta;
 
-    public Mafro(TecnicoComercial tecnico){
-        this.tecnico = tecnico;
+    public Mafro(Bien bien, Cliente cliente) {
+        this.bien = bien;
+        this.cliente = cliente;
     }
-
+    
+    @Override
+    public String getNombre(){
+        return "Mafro";
+    }
     
     @Override
     public double calcularOferta(){
-        
-        Bien bien;
-        Cliente cliente;
-        bien = tecnico.getBien();
-        cliente = tecnico.getCliente();
+      
         if(bien.getTipo().equals("vehiculo") && (cliente.getAnioNacimiento() - LocalDate.now().getYear() < 20)){
             oferta = 0.05 * bien.getValor();
         }
