@@ -9,7 +9,7 @@ import java.util.Scanner;
  */
 public class Vista {
     private final Scanner scan = new Scanner(System.in);
-    
+    private final String ANSI_PURPLE = "\u001B[35m";
     
     public int consultarAnioNacimiento(){
         System.out.println("Introduce el año de nacimiento del cliente: ");
@@ -36,13 +36,13 @@ public class Vista {
     }
     
     public void falloCliente(){
-        System.err.println("El año de nacimiento debe estar entre 1900 y " +  LocalDate.now().getYear());
+        System.out.println(ANSI_PURPLE + "El año de nacimiento debe estar entre 1900 y " +  LocalDate.now().getYear());
     }
     
     public void falloBien(){
-        System.err.println("El tipo del bien debe ser una vivienda o un vehículo");
-        System.err.println("El valor máximo del vehículo es de 50.000€");
-        System.err.println("El valor mínimo de la vivienda es de 50.000€");
+        System.out.println(ANSI_PURPLE + "El tipo del bien debe ser una vivienda o un vehículo");
+        System.out.println(ANSI_PURPLE + "El valor máximo del vehículo es de 50.000€");
+        System.out.println(ANSI_PURPLE + "El valor mínimo de la vivienda es de 50.000€");
     }
     
     

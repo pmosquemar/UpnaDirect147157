@@ -17,9 +17,9 @@ public class Presentador {
     public Cliente datosCliente(){
         int anioNacimiento = vista.consultarAnioNacimiento();
         int salario = vista.consultarSalario();
-        while(!new Cliente(salario, anioNacimiento).usuarioValido()){
+        if(!new Cliente(salario, anioNacimiento).usuarioValido()){
             vista.falloCliente();
-            datosCliente();
+            return datosCliente();
         }
         return new Cliente(salario, anioNacimiento); 
         
@@ -28,7 +28,7 @@ public class Presentador {
     public Bien datosBien(){
         String tipo = vista.consultarTipo();
         int valor = vista.consultarValor();
-        while(!new Bien(tipo, valor).bienValido()){
+        if(!new Bien(tipo, valor).bienValido()){
             vista.falloBien();
             return datosBien();
         }
