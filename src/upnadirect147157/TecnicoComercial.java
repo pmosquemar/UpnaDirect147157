@@ -30,7 +30,6 @@ public class TecnicoComercial {
                 aseguradora = aseguradoras[i+1];
             }
         }
-        return aseguradora.getNombre() + "| " + aseguradora.calcularOferta() + " | " + aseguradora.calcularComision();
+        return aseguradora.getNombre() + " | " + aseguradora.calcularOferta() + " | " + aseguradora.calcularComision();
     }
-   
 }

@@ -15,7 +15,7 @@ public class UpnaDirect147157 {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        System.err.println(new TecnicoComercial().calcularOfertas());
+        System.out.println(new TecnicoComercial().calcularOfertas());
     }
     
 }

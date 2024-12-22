@@ -134,7 +134,7 @@ public class UpnaDirect147157Test {
     @Test
     public void testAutomatizado() {
         Bien bien = new Bien("vehiculo", 30000);
-        Cliente cliente = new Cliente(2005, 15000);
+        Cliente cliente = new Cliente(15000, 2005);
         TecnicoComercial tecnico = new TecnicoComercial();
         Aseguradora[] aseguradoras = new Aseguradora[3];
         aseguradoras[0] = new LineaIndirecta(bien, cliente);
@@ -144,6 +144,5 @@ public class UpnaDirect147157Test {
         
         assertEquals("LineaIndirecta | 900.0 | 9", tecnico.ofertaMasVentajosa(aseguradoras));
     }
-    
     
 }
