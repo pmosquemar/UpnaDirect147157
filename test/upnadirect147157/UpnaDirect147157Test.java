@@ -76,7 +76,7 @@ public class UpnaDirect147157Test {
     @Test
     public void testCalcularOfertaAdasles() {
         Bien bien = new Bien("vivienda", 120000);
-        Cliente cliente = new Cliente(1970, 35000);
+        Cliente cliente = new Cliente(35000, 1970);
         Adasles adasles = new Adasles(bien, cliente);
 
         assertEquals(2400.0, adasles.calcularOferta(), 0.001);
@@ -85,7 +85,7 @@ public class UpnaDirect147157Test {
     @Test
     public void testCalcularComisionAdasles() {
         Bien bien = new Bien("vivienda", 120000);
-        Cliente cliente = new Cliente(1970, 35000);
+        Cliente cliente = new Cliente(35000, 1970);
         Adasles adasles = new Adasles(bien, cliente);
         double oferta = adasles.calcularOferta();
         
@@ -96,7 +96,7 @@ public class UpnaDirect147157Test {
     @Test
     public void testCalcularOfertaMafro() {
         Bien bien = new Bien("vivienda", 120000);
-        Cliente cliente = new Cliente(1970, 35000);
+        Cliente cliente = new Cliente(35000, 1970);
         Mafro mafro = new Mafro(bien, cliente);
 
         assertEquals(3600.0, mafro.calcularOferta(), 0.001);
@@ -105,7 +105,7 @@ public class UpnaDirect147157Test {
     @Test
     public void testCalcularComisionMafro() {
         Bien bien = new Bien("vivienda", 120000);
-        Cliente cliente = new Cliente(1970, 35000);
+        Cliente cliente = new Cliente(35000, 1970);
         Mafro mafro = new Mafro(bien, cliente);
         double oferta = mafro.calcularOferta();
         
@@ -115,7 +115,7 @@ public class UpnaDirect147157Test {
     @Test
     public void testCalcularOfertaLineaIndirecta() {
         Bien bien = new Bien("vivienda", 120000);
-        Cliente cliente = new Cliente(1970, 35000);
+        Cliente cliente = new Cliente(35000, 1970);
         LineaIndirecta lineaIndirecta = new LineaIndirecta(bien, cliente);
 
         assertEquals(4800.0, lineaIndirecta.calcularOferta(), 0.001);
@@ -124,7 +124,7 @@ public class UpnaDirect147157Test {
     @Test
     public void testCalcularComisionLineaIndirecta() {
         Bien bien = new Bien("vivienda", 120000);
-        Cliente cliente = new Cliente(1970, 35000);
+        Cliente cliente = new Cliente(35000, 1970);
         LineaIndirecta lineaIndirecta = new LineaIndirecta(bien, cliente);
         double oferta = lineaIndirecta.calcularOferta();
         
