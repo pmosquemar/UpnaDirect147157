@@ -24,7 +24,6 @@ public class UpnaDirect147157Test {
     
      @Test
     public void testVehiculoValido() {
-        // Vehículo con valor dentro del rango permitido
         Bien vehiculo = new Bien("vehiculo", 50000);
         assertTrue(vehiculo.bienValido());
     }
@@ -32,28 +31,24 @@ public class UpnaDirect147157Test {
     
     @Test
     public void testVehiculoNoValido() {
-        // Vehículo con valor fuera del rango permitido
         Bien vehiculo = new Bien("vehiculo", 60000);
         assertFalse(vehiculo.bienValido());
     }
     
     @Test
     public void testViviendaValida() {
-        // Vehículo con valor fuera del rango permitido
         Bien vivienda = new Bien("vivienda", 120000);
         assertTrue(vivienda.bienValido());
     }
     
     @Test
     public void testViviendaNoValida() {
-        // Vehículo con valor fuera del rango permitido
         Bien vivienda = new Bien("vivienda", 30000);
         assertFalse(vivienda.bienValido());
     }
     
     @Test
-    public void testBienNoValida() {
-        // Vehículo con valor fuera del rango permitido
+    public void testBienNoValido() {
         Bien bien = new Bien("armario", 30000);
         assertFalse(bien.bienValido());
     }
@@ -61,23 +56,79 @@ public class UpnaDirect147157Test {
     
     @Test
     public void testClienteValido() {
-        // Vehículo con valor fuera del rango permitido
         Cliente cliente = new Cliente(35000, 1970);
         assertTrue(cliente.clienteValido());
     }
     
     @Test
     public void testClienteNoValidoEdadMenor() {
-        // Vehículo con valor fuera del rango permitido
         Cliente cliente = new Cliente(35000, 1500);
         assertFalse(cliente.clienteValido());
     }
     
     @Test
     public void testClienteNoValidoEdadMayor() {
-        // Vehículo con valor fuera del rango permitido
         Cliente cliente = new Cliente(35000, 2100);
         assertFalse(cliente.clienteValido());
+    }
+    
+    
+    @Test
+    public void testCalcularOfertaAdasles() {
+        Bien bien = new Bien("vivienda", 120000);
+        Cliente cliente = new Cliente(1970, 35000);
+        Adasles adasles = new Adasles(bien, cliente);
+
+        assertEquals(2400.0, adasles.calcularOferta(), 0.001);
+    }
+    
+    @Test
+    public void testCalcularComisionAdasles() {
+        Bien bien = new Bien("vivienda", 120000);
+        Cliente cliente = new Cliente(1970, 35000);
+        Adasles adasles = new Adasles(bien, cliente);
+        double oferta = adasles.calcularOferta();
+        
+        assertEquals(120,adasles.calcularComision() , 0.001);
+    }
+    
+    
+    @Test
+    public void testCalcularOfertaMafro() {
+        Bien bien = new Bien("vivienda", 120000);
+        Cliente cliente = new Cliente(1970, 35000);
+        Mafro mafro = new Mafro(bien, cliente);
+
+        assertEquals(3600.0, mafro.calcularOferta(), 0.001);
+    }
+    
+    @Test
+    public void testCalcularComisionMafro() {
+        Bien bien = new Bien("vivienda", 120000);
+        Cliente cliente = new Cliente(1970, 35000);
+        Mafro mafro = new Mafro(bien, cliente);
+        double oferta = mafro.calcularOferta();
+        
+        assertEquals(108,mafro.calcularComision() , 0.001);
+    }
+    
+    @Test
+    public void testCalcularOfertaLineaIndirecta() {
+        Bien bien = new Bien("vivienda", 120000);
+        Cliente cliente = new Cliente(1970, 35000);
+        LineaIndirecta lineaIndirecta = new LineaIndirecta(bien, cliente);
+
+        assertEquals(4800.0, lineaIndirecta.calcularOferta(), 0.001);
+    }
+    
+    @Test
+    public void testCalcularComisionLineaIndirecta() {
+        Bien bien = new Bien("vivienda", 120000);
+        Cliente cliente = new Cliente(1970, 35000);
+        LineaIndirecta lineaIndirecta = new LineaIndirecta(bien, cliente);
+        double oferta = lineaIndirecta.calcularOferta();
+        
+        assertEquals(192,lineaIndirecta.calcularComision() , 0.001);
     }
     
     

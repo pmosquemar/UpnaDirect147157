@@ -40,7 +40,7 @@ public class Mafro implements Aseguradora{
     }
 
     @Override
-    public int calcularComisison(){
+    public int calcularComision(){
         int comision;
         if(oferta < 1000){
             comision = (int) Math.floor(0.01 * oferta);

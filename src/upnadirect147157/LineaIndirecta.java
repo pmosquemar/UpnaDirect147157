@@ -40,13 +40,13 @@ public class LineaIndirecta implements Aseguradora{
 
     
     @Override
-    public int calcularComisison(){
+    public int calcularComision(){
         int comision;
         if(oferta < 1000){
             comision = (int) Math.floor(0.01 * oferta);
         }
         else {
-            comision = (int) Math.floor(0.03 * oferta);
+            comision = (int) Math.floor(0.04 * oferta);
         }
         return comision;
     }

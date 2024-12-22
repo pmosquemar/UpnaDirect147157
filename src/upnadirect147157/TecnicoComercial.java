@@ -23,11 +23,11 @@ public class TecnicoComercial {
             if(aseguradora.calcularOferta() > aseguradoras[i+1].calcularOferta()){
                 aseguradora = aseguradoras[i+1];
             }
-            else if((aseguradora.calcularOferta() == aseguradoras[i+1].calcularOferta()) && (aseguradora.calcularComisison() < aseguradoras[i+1].calcularComisison())){
+            else if((aseguradora.calcularOferta() == aseguradoras[i+1].calcularOferta()) && (aseguradora.calcularComision() < aseguradoras[i+1].calcularComision())){
                 aseguradora = aseguradoras[i+1];
             }
         }
-        return aseguradora.getNombre() + "| " + aseguradora.calcularOferta() + " | " + aseguradora.calcularComisison();
+        return aseguradora.getNombre() + "| " + aseguradora.calcularOferta() + " | " + aseguradora.calcularComision();
     }
     
     
