@@ -5,8 +5,6 @@
  */
 package upnadirect147157;
 
-import com.sun.security.ntlm.Client;
-
 /**
  *
  * @author alumno
