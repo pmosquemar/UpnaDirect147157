@@ -15,7 +15,7 @@ public class Cliente {
         this.anioNacimiento = anioNacimiento;
     }
     
-    public boolean usuarioValido(){
+    public boolean clienteValido(){
         if(this.anioNacimiento > 1900 && this.anioNacimiento < LocalDate.now().getYear()){
             return true;
         }

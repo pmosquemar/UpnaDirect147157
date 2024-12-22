@@ -59,6 +59,26 @@ public class UpnaDirect147157Test {
     }
     
     
+    @Test
+    public void testClienteValido() {
+        // Vehículo con valor fuera del rango permitido
+        Cliente cliente = new Cliente(35000, 1970);
+        assertTrue(cliente.clienteValido());
+    }
+    
+    @Test
+    public void testClienteNoValidoEdadMenor() {
+        // Vehículo con valor fuera del rango permitido
+        Cliente cliente = new Cliente(35000, 1500);
+        assertFalse(cliente.clienteValido());
+    }
+    
+    @Test
+    public void testClienteNoValidoEdadMayor() {
+        // Vehículo con valor fuera del rango permitido
+        Cliente cliente = new Cliente(35000, 2100);
+        assertFalse(cliente.clienteValido());
+    }
     
     
 }

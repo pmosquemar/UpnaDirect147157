@@ -17,7 +17,7 @@ public class Presentador {
     public Cliente datosCliente(){
         int anioNacimiento = vista.consultarAnioNacimiento();
         int salario = vista.consultarSalario();
-        if(!new Cliente(salario, anioNacimiento).usuarioValido()){
+        if(!new Cliente(salario, anioNacimiento).clienteValido()){
             vista.falloCliente();
             return datosCliente();
         }
