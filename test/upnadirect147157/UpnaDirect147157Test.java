@@ -131,5 +131,19 @@ public class UpnaDirect147157Test {
         assertEquals(192,lineaIndirecta.calcularComision() , 0.001);
     }
     
+    @Test
+    public void testAutomatizado() {
+        Bien bien = new Bien("vehiculo", 30000);
+        Cliente cliente = new Cliente(2005, 15000);
+        TecnicoComercial tecnico = new TecnicoComercial();
+        Aseguradora[] aseguradoras = new Aseguradora[3];
+        aseguradoras[0] = new LineaIndirecta(bien, cliente);
+        aseguradoras[1] = new Mafro(bien, cliente);
+        aseguradoras[2] = new Adasles(bien, cliente);
+        
+        
+        assertEquals("LineaIndirecta | 900.0 | 9", tecnico.ofertaMasVentajosa(aseguradoras));
+    }
+    
     
 }

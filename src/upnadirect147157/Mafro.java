@@ -32,8 +32,7 @@ public class Mafro implements Aseguradora{
             oferta = 0.02 * bien.getValor();
         }
         else{
-            oferta = 0.03 * bien.getValor()
-                    ; 
+            oferta = 0.03 * bien.getValor(); 
         }
 
         return oferta;

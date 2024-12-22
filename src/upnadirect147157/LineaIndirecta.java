@@ -31,7 +31,7 @@ public class LineaIndirecta implements Aseguradora{
             oferta = 0.06 * bien.getValor();
         }
         else{
-            oferta = 0.04 * bien.getValor(); 
+            oferta = 0.03 * bien.getValor(); 
             
         }
 
